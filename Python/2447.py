@@ -1,8 +1,15 @@
+def maker(n):
+  c=maker(n//3)
+  b=[]
+  for star in c:
+    b.append(star*3)
+  for star in c:
+    b.append(star+' '*(n//3)+star)
+  for star in c:
+    b.append(star*3)
+  return b
 a=int(input())
-b=0
-while a!=1:
-    a=a//3
-    b=b+1
-for i in range(a):
-    if a//3!=0 and i//(a//3)==1:
-        print('*'*(a//3),' '*(a//2),'*'*(a))
+if a==1:
+    print('*')
+else:
+    print('\n'.join(maker(a)))
